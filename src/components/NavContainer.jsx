@@ -5,11 +5,7 @@ import menubtn from '../assets/icon-menu.svg'
 import MobileList from '../utils/MobileList'
 function NavContainer() {
     const [isVisible, setNavVisible] = useState(false)
-    const tagleMenu = ()=>{
-        console.log("here");
-        
-        setNavVisible(!isVisible)
-    }
+    const tagleMenu = ()=>{ setNavVisible(!isVisible) }
     return (
         <>
             <header id="header">

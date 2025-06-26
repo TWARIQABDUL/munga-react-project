@@ -2,9 +2,14 @@ import React from 'react'
 import dest1 from '../assets/dest1.png'
 
 function DestinationCard() {
+    const sorry = ()=>{
+        console.log("yoo");
+        
+    }
     return (
         <>
-            <div className="card" data-location="Kigali">
+            <div className="card" data-location="Kigali" onClick={sorry
+            }>
                 <img src={dest1} />
                 <div className="destination-info">
                     <p>Kigali<span>$100</span></p>

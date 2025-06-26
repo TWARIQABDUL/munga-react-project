@@ -1,37 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
     <footer id="footer">
-        <div class="company">
+        <div className="company">
             <h3>Traver</h3>
             <p>Book your trip in minute, get full
                 Control for much longer..</p>
 
         </div>
-        <div class="links">
+        <div className="links">
             <h3>Company</h3>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="index.html">Career</a></li>
-                <li><a href="contactus.html">Mobile</a></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/">Career</Link></li>
+                <li><Link to="/contact">Mobile</Link></li>
             </ul>
         </div>
-        <div class="contact">
+        <div className="contact">
             <h3>Contact</h3>
             <ul>
-                <li><a href="">Help/FAQ</a></li>
-                <li><a href="">Press</a></li>
-                <li><a href="">Affiliates</a></li>
+                <li><Link to="">Help/FAQ</Link></li>
+                <li><Link to="">Press</Link></li>
+                <li><Link to="">Affiliates</Link></li>
             </ul>
         </div>
-        <div class="more-stuf">
+        <div className="more-stuf">
             <h3>More</h3>
             <ul>
-                <li><a href="#">Airline Fees</a></li>
-                <li><a href="#">Airline</a></li>
-                <li><a href="#">Low fare tips</a></li>
-            </ul>
+                <li><Link to="#">Airline Fees</Link></li>
+                <li><Link to="#">Airline</Link></li>
+                <li><Link to="#">Low </Link> </li></ul>
         </div>
     </footer>
   )
