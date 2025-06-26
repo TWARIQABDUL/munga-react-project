@@ -13,7 +13,6 @@ function Home() {
         <Services />
         <Destinations/>
         <Subscribe />
-        <Footer />
       </main>
   )
 }
