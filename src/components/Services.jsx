@@ -1,8 +1,23 @@
 import React from 'react'
+import Card from '../utils/Card'
 
 function Services() {
   return (
-    <div>Services</div>
+     <section className="services" id="services">
+            <div className="title">
+                <h3>CATEGORY</h3>
+                <p>We Offer Best Services</p>
+            </div>
+            <div className="container">
+
+                <div className="service-cards">
+                    <Card/>
+                    <Card/>
+                    <Card/>
+
+                </div>
+            </div>
+        </section>
   )
 }
 
