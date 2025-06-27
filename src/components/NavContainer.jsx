@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-import menubtn from '../assets/icon-menu.svg'
+import menubtn from '/assets/icon-menu.svg'
 import MobileList from '../utils/MobileList'
 function NavContainer() {
     const [isVisible, setNavVisible] = useState(false)

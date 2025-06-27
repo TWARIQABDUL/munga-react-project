@@ -1,5 +1,5 @@
 import React from 'react'
-import satelite from "../assets/satellite.svg"
+import satelite from "/assets/satellite.svg"
 function Card() {
   return (
     <div className="card">

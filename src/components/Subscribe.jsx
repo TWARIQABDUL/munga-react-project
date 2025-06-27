@@ -1,5 +1,5 @@
 import React from 'react'
-import email from "../assets/email.svg"
+import email from "/assets/email.svg"
 function Subscribe() {
   return (
     <section className="newsletter" id="news-lette">

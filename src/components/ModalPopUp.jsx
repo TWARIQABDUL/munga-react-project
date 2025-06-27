@@ -1,32 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
+import close from "/assets/icon-close.svg"
+import { cityInfo } from "../data/cityinfo";
+function ModalPopUp({ controlModal, itemKey }) {
+    const [mainImage,setMainImage]=useState(cityInfo[itemKey].icon)
+    console.log(cityInfo[itemKey]);
 
-function ModalPopUp() {
-  return (
-    <div class="modal-box" style="display: block;">
-            <div class="modal-content">
-            <div class="place-review">
-                    <img id="main-image" src="images/dest2.png" alt="destination1.png"/>
-                    <div class="small-cards">
-                        <img src="images/dest1.png" class="previews" data-image="images/dest1.png" alt="destination1.png"/>
-                        <img src="images/dest2.png" class="previews" data-image="images/dest2.png" alt="destination1.png"/>
-                        <img src="images/dest1.png" class="previews" data-image="images/dest1.png" alt="destination1.png"/>
+    return (
+        <div className="modal-box">
+            <div className="modal-content">
+                <div className="place-review">
+                    <img id="main-image" src={mainImage} alt="destination1.png" />
+                    <div className="small-cards">
+                        {cityInfo[itemKey].metaImages.map((im,index) => <img key={index} src={im} onClick={()=>setMainImage(im)} className="previews" data-image="images/dest1.png" alt="destination1.png" />)}
                     </div>
                 </div>
-                <div class="description">
-                    <h3>London <span>rated</span></h3>
-                    <p class="description"> abeautififul place to take vation do not forget to watch your back</p>
-                    <p class="title">Usefull info</p>
-                    <p class="info">population <span>190</span></p><p class="info">racism <span>2</span></p><p class="info">hospitality <span>Perfect</span></p>
-                    
-                    <p class="info">popular Places  <span class="place">place1</span><span class="place">place2</span><span class="place">place3</span></p>
-                    <button class="buttons">Book Your Trip</button>
+                <div className="description">
+                    <h3>{cityInfo[itemKey].location} <span>rated</span></h3>
+                    <p className="description"> {cityInfo[itemKey].description} </p>
+                    <p className="title">Usefull info</p>
+                    {Object.entries(cityInfo[itemKey].metaDatas).map(([key,value])=>{
+                        
+                       return  <p key={key} className="info">{key} <span>{value}</span></p>
+                    })}
+                    <p className="info">popular Places  <span className="place">place1</span><span className="place">place2</span><span className="place">place3</span></p>
+                    <button className="buttons">Book Your Trip</button>
                 </div>
-                <div class="close">
-                    <img src="images/icon-close.svg" alt="close modal"/>
+                <div className="close" onClick={controlModal}>
+                    <img src={close} alt="close modal" />
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default ModalPopUp

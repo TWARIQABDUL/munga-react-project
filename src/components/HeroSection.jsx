@@ -1,7 +1,7 @@
 import React from 'react'
-import img_backhome from '../assets/back.svg'
-import hero_img from '../assets/hero-image.png'
-import poly from '../assets/poly.svg'
+import img_backhome from '/assets/back.svg'
+import hero_img from '/assets/hero-image.png'
+import poly from '/assets/poly.svg'
 import AnimatedParagragh from '../utils/AnimatedParagragh'
 
 function HeroSection() {

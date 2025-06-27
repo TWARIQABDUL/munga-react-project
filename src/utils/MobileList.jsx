@@ -1,6 +1,6 @@
 import React from 'react'
 
-import closee from '../assets/icon-close.svg'
+import closee from '/assets/icon-close.svg'
 function MobileList({setStatus}) {
     console.log(setStatus);
     

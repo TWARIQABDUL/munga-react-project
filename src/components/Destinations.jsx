@@ -1,8 +1,9 @@
-import React from 'react'
-import dest1 from '../assets/dest1.png'
-import dest2 from '../assets/dest2.png'
+
 import DestinationCard from '../utils/DestinationCard'
+import { cityInfo } from '../data/cityinfo'
 function Sestinations() {
+  // console.log(cityInfo);
+  
   return (
     <section className="services" id="department">
       <div className="title">
@@ -20,9 +21,7 @@ function Sestinations() {
       <div className="card-container">
 
         <div className="destination-cards">
-          <DestinationCard/>
-          <DestinationCard/>
-          <DestinationCard/>
+          {cityInfo.map((city,index)=> <DestinationCard key={index} itemKey ={index} aboutCity ={city} />)}
 
           </div>
       </div>

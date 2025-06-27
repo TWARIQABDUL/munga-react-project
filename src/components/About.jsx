@@ -1,5 +1,5 @@
 import React from 'react'
-import about_image from "../assets/hero-image.png" 
+import about_image from "/assets/hero-image.png" 
 function About() {
   return (
     <section className="about-section">
