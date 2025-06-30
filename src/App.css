@@ -923,6 +923,12 @@ p.info {
     display: flex;
     justify-content: space-between;
     padding: .5rem;
+    margin: 1rem 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--h1-text);
+    flex-wrap: wrap;
+    
 }
 
 p.info span {
@@ -931,8 +937,11 @@ p.info span {
 
 .place {
     background: var(--h1-text);
-    padding: 3px 6px;
+    padding: .5rem 1rem;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .description button {
@@ -1051,7 +1060,8 @@ p.info span {
         padding: .5rem 1rem;
         gap: 30px;
     }
-    .close{
+
+    .close {
         display: flex;
         align-items: center;
         justify-content: center;

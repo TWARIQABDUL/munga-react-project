@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import close from "/assets/icon-close.svg"
 import { cityInfo } from "../data/cityinfo";
+import YellowButons from '../utils/YellowButons';
 function ModalPopUp({ controlModal, itemKey }) {
     const [mainImage,setMainImage]=useState(cityInfo[itemKey].icon)
     console.log(cityInfo[itemKey]);
@@ -22,8 +23,14 @@ function ModalPopUp({ controlModal, itemKey }) {
                         
                        return  <p key={key} className="info">{key} <span>{value}</span></p>
                     })}
-                    <p className="info">popular Places  <span className="place">place1</span><span className="place">place2</span><span className="place">place3</span></p>
-                    <button className="buttons">Book Your Trip</button>
+                    <p className="info">popular Places  
+                        {cityInfo[itemKey].popularPlaces.map((place, index) => {
+                            return <span key={index} className="place">{place}</span>
+                        })}
+                        </p>
+                        {/* <span className="place">place1</span><span className="place">place2</span><span className="place">place3</span></p> */}
+                    <YellowButons text="Continue to Bookings" className="buttons"/>
+                    {/* <button className="buttons">Book Your Trip</button> */}
                 </div>
                 <div className="close" onClick={controlModal}>
                     <img src={close} alt="close modal" />

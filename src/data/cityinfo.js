@@ -18,9 +18,9 @@ export const cityInfo = [
             hospitality: "Perfect"
         },
         popularPlaces: [
-            "Muhazi",
-            "Urukari",
-            "Igicumbi"
+            "Big Ben",
+            "London Eye",
+            "Buckingham Palace"
         ]
     },
     {
@@ -66,9 +66,9 @@ export const cityInfo = [
             hospitality: "Perfect"
         },
         popularPlaces: [
-            "Muhazi",
-            "Urukari",
-            "Igicumbi"
+            "Kings Park",
+            "Kampala Hill",
+            "Uganda Museum"
         ]
     },
 ]

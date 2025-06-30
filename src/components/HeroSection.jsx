@@ -3,6 +3,7 @@ import img_backhome from '/assets/back.svg'
 import hero_img from '/assets/hero-image.png'
 import poly from '/assets/poly.svg'
 import AnimatedParagragh from '../utils/AnimatedParagragh'
+import YellowButons from '../utils/YellowButons'
 
 function HeroSection() {
     return (
@@ -19,7 +20,10 @@ function HeroSection() {
                         <p>Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed
                             listening. Park gate sell they west hard for the.</p>
                         <div className="buttons">
-                            <button className="more">Find out more</button>
+                            <YellowButons text="Find out more" action={() => {
+                                document.getElementById("department").scrollIntoView({ behavior: "smooth" })
+                            }} />
+                            {/* <button className="more">Find out more</button> */}
                             <button className="play"><span><img src={poly} alt="" /></span> Play Demo</button>
                         </div>
                     </div>
