@@ -2,7 +2,7 @@ export const cityInfo = [
     {
         icon: "/assets/dest1.png",
         location: "London",
-        price: 100,
+        price: 200,
         temp: 0,
         weather: null,
         humidity: null,
@@ -24,9 +24,9 @@ export const cityInfo = [
         ]
     },
     {
-        icon: "/assets/dest1.png",
+        icon: "/assets/dest2.png",
         location: "Kigali",
-        price: 100,
+        price: 500,
         temp: 0,
         weather: null,
         humidity: null,

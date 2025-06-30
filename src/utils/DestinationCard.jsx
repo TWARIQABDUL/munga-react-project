@@ -44,9 +44,9 @@ function DestinationCard({ aboutCity,itemKey }) {
     return (
         <>
             <div className="card" data-location="Kigali" onClick={controlModal}>
-                <img src={dest1} />
+                <img src={aboutCity.icon} />
                 <div className="destination-info">
-                    <p>Kigali<span>{aboutCity.price}</span></p>
+                    <p>{aboutCity.location}<span>{aboutCity.price}</span></p>
                     <p>Humidity<span>{my_hook.humidity} 🌡</span></p>
                     <p>Curentntly<span>{my_hook.curently}☀</span></p>
                     <p>temp<span>{my_hook.temp} 🌡</span></p>
