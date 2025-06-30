@@ -9,9 +9,9 @@ function MobileList({setStatus}) {
      <div className="mobile-menu-container ">
         <button className="close-menu" id="close" onClick={setStatus} ><img src={closee} alt=""/></button>
         <ul>
-            <li><a href="/about.html">Home</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
+            <li><Link to="/about.html">Home</Link></li>
+            <li><Link to="/about.html">About Us</Link></li>
+            <li><Link to="contactus.html">Contact Us</Link></li>
         </ul>
     </div>
     </>

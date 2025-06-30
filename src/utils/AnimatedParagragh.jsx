@@ -9,13 +9,16 @@ function AnimatedParagragh() {
     let index = 0;
     setMovingText("");
     const interval = setInterval(() => {
-        if (index >= text.length-1) {
-            // console.log("out of bound ", text[index]);
+        if (index >= text.length-1){
             clearInterval(interval);
         }
-        
-        setMovingText((prev) => prev += text[index-1]);
+
+        if (index  === text.length-1) {
+            return;
+        }
+        setMovingText((prev) => prev + text[index]);
         index++;
+        console.log("here end", text[index]);
     }, 100);
     
     return () => clearInterval(interval);
