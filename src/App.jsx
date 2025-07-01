@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import Login from './pages/Login'
+import Learning from './components/Learning'
 function App() {
   return (
     <>
@@ -16,6 +17,8 @@ function App() {
           <Route path="contact" element={<ContactUs/>} />
         </Route>
         <Route path="/register" element={<Login/>} />
+        {/* <Route path="/learning" element={<Learning/>} /> */}
+
       </Routes>
     </BrowserRouter>
       

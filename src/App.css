@@ -733,6 +733,8 @@ form {
 form .group {
     position: relative;
     margin-bottom: 1.5rem;
+    flex-direction: column;
+    display: flex;
 }
 
 .group input {
@@ -743,6 +745,20 @@ form .group {
     border-radius: 6px;
     outline: none;
     background: none;
+}
+
+.group.error label {
+    color: red !important;
+}
+
+.group.error input {
+    border: 2px solid red;
+    border-radius: 6px;
+}
+
+.group.success input {
+    border: 2px solid var(--hero-text-color);
+    border-radius: 6px;
 }
 
 .group label {
@@ -928,7 +944,7 @@ p.info {
     font-weight: 500;
     color: var(--h1-text);
     flex-wrap: wrap;
-    
+
 }
 
 p.info span {

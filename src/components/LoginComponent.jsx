@@ -2,21 +2,59 @@ import React, { useReducer, useState } from 'react'
 import InputGroup from '../utils/InputGroup'
 import YellowButons from '../utils/YellowButons'
 import ThirdPartSignin from '../utils/ThirdPartSignin'
-
+import { emailValidator, passwordValidator, usernameValidator } from '../utils/helpers'
 function LoginComponent() {
     const reducer = (state, action) => {
         switch (action.type) {
             case 'SET_NAME':
+                console.log("name is changing");
+                let namevalidation = usernameValidator(action.payload);
+                if (!namevalidation.valid) {
+                    state.validationMessages.name = namevalidation.message;
+                    state.classNames.name = namevalidation.className;
+                }else{
+                    state.validationMessages.name = "";
+                    state.classNames.name = "success";
+                }                
                 return { ...state, name: action.payload };
             case 'SET_EMAIL':
+                let emailValidation = emailValidator(action.payload)
+                if (!emailValidation.valid) {
+                    state.validationMessages.email = emailValidation.message;
+                    state.classNames.email = emailValidation.className;
+                    
+                }else{
+                    state.validationMessages.email = "";
+                    state.classNames.email = "success";
+                }
                 return { ...state, email: action.payload };
             case 'SET_PASSWORD':
+                let pwd = passwordValidator(action.payload);
+                if (!pwd.valid) {
+                    state.validationMessages.password = pwd.message;
+                    state.classNames.password = pwd.className;
+                }else{
+                    state.validationMessages.password = "";
+                    state.classNames.password = "success";
+                }
                 return { ...state, password: action.payload };
             case 'SET_CONFIRM_PASSWORD':
+                if (state.password !== action.payload) {
+                    state.validationMessages.confirmPassword = "Passwords do not match";
+                    state.classNames.confirmPassword = "error";
+                } else {
+                    state.validationMessages.confirmPassword = "";
+                    state.classNames.confirmPassword = "success";
+                }
+
+                console.log(action.payload);
+                
                 return { ...state, confirmPassword: action.payload };
                 break;
             case 'CREATE_ACCOUNT':
                 if (state.password !== state.confirmPassword) {
+                    state.validationMessages.confirmPassword = "Passwords do not match";
+                    state.classNames.confirmPassword = "error";
                     alert("Passwords do not match");
                     return state;
                 }
@@ -27,7 +65,19 @@ function LoginComponent() {
         }
     }
 
-    const [state,dispatch]= useReducer(reducer,{name:"",email:"",password:"",confirmPassword:""});
+    const [state,dispatch]= useReducer(reducer,{name:"",email:"",password:"",confirmPassword:"",validationMessages:{
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    },
+    classNames: {
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    }
+});
     return (
         <div className="container-login">
             <div className="left">
@@ -51,6 +101,8 @@ function LoginComponent() {
                             label="Full Name"
                             type="text"
                             required
+                            className={state.classNames.name}
+                            validationMessage={state.validationMessages.name}
                             handle={(e) => dispatch({ type: 'SET_NAME', payload: e.target.value })}
                         />
                         <InputGroup
@@ -59,6 +111,8 @@ function LoginComponent() {
                             label="Email"
                             type="email"
                             required
+                            className={state.classNames.email}
+                            validationMessage={state.validationMessages.email}
                             handle={(e) => dispatch({ type: 'SET_EMAIL', payload: e.target.value })}
                         />
                         <InputGroup
@@ -67,6 +121,8 @@ function LoginComponent() {
                             label="Password"
                             type="password"
                             required
+                            className={state.classNames.password}
+                            validationMessage={state.validationMessages.password}
                             handle={(e) => dispatch({ type: 'SET_PASSWORD', payload: e.target.value })}
                         />
                         <InputGroup
@@ -75,6 +131,8 @@ function LoginComponent() {
                             label="Confirm Password"
                             type="password"
                             required
+                            className={state.classNames.confirmPassword}
+                            validationMessage={state.validationMessages.confirmPassword}
                             handle={(e) => dispatch({ type: 'SET_CONFIRM_PASSWORD', payload: e.target.value })}
                         />
 
