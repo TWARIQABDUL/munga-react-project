@@ -5,7 +5,10 @@ import YellowButons from '../utils/YellowButons';
 function ModalPopUp({ controlModal, itemKey }) {
     const [mainImage,setMainImage]=useState(cityInfo[itemKey].icon)
     console.log(cityInfo[itemKey]);
-
+    setInterval(()=>{
+        console.log("stilll mounted");
+        
+    },1000)
     return (
         <div className="modal-box">
             <div className="modal-content">

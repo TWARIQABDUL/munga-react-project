@@ -3,7 +3,10 @@ import InputGroup from '../utils/InputGroup'
 import YellowButons from '../utils/YellowButons'
 import ThirdPartSignin from '../utils/ThirdPartSignin'
 import { emailValidator, passwordValidator, usernameValidator } from '../utils/helpers'
+import { Navigate, useNavigate } from 'react-router-dom'
 function LoginComponent() {
+    const [canSubmit,setSubmit]= useState(false);
+    const navigate = useNavigate()
     const reducer = (state, action) => {
         switch (action.type) {
             case 'SET_NAME':
@@ -12,9 +15,11 @@ function LoginComponent() {
                 if (!namevalidation.valid) {
                     state.validationMessages.name = namevalidation.message;
                     state.classNames.name = namevalidation.className;
+                    setSubmit(false);
                 }else{
                     state.validationMessages.name = "";
                     state.classNames.name = "success";
+                    setSubmit(true);
                 }                
                 return { ...state, name: action.payload };
             case 'SET_EMAIL':
@@ -22,10 +27,11 @@ function LoginComponent() {
                 if (!emailValidation.valid) {
                     state.validationMessages.email = emailValidation.message;
                     state.classNames.email = emailValidation.className;
-                    
+                    setSubmit(false)
                 }else{
                     state.validationMessages.email = "";
                     state.classNames.email = "success";
+                    setSubmit(true);
                 }
                 return { ...state, email: action.payload };
             case 'SET_PASSWORD':
@@ -33,33 +39,31 @@ function LoginComponent() {
                 if (!pwd.valid) {
                     state.validationMessages.password = pwd.message;
                     state.classNames.password = pwd.className;
+                    setSubmit(false);
                 }else{
                     state.validationMessages.password = "";
                     state.classNames.password = "success";
+                    setSubmit(true);
                 }
                 return { ...state, password: action.payload };
             case 'SET_CONFIRM_PASSWORD':
                 if (state.password !== action.payload) {
                     state.validationMessages.confirmPassword = "Passwords do not match";
                     state.classNames.confirmPassword = "error";
+                    setSubmit(false);
                 } else {
                     state.validationMessages.confirmPassword = "";
                     state.classNames.confirmPassword = "success";
+                    setSubmit(true);
                 }
-
-                console.log(action.payload);
-                
                 return { ...state, confirmPassword: action.payload };
                 break;
             case 'CREATE_ACCOUNT':
-                if (state.password !== state.confirmPassword) {
-                    state.validationMessages.confirmPassword = "Passwords do not match";
-                    state.classNames.confirmPassword = "error";
-                    alert("Passwords do not match");
-                    return state;
+                if(canSubmit){
+                    localStorage.setItem("user", JSON.stringify(state));
+                    navigate("/");
                 }
-                console.log("my innputs",state);
-                
+
             default:
                 return state;
         }

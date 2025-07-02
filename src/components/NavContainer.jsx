@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import menubtn from '/assets/icon-menu.svg'
 import MobileList from '../utils/MobileList'
 import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from './Context'
+
 
 function NavContainer() {
     const [isVisible, setNavVisible] = useState(false)
@@ -12,7 +14,7 @@ function NavContainer() {
         <>
             <header id="header">
                 <nav>
-                    <h1>traver</h1>
+                    <h1>traver </h1>
                     <ul>
                         <li><Link to="#services"onClick={() => document.getElementById("services").scrollIntoView({ behavior: "smooth" })}>Services</Link></li>
                         <li><Link to="#department" onClick={() => document.getElementById("department").scrollIntoView({ behavior: "smooth" })}>Department</Link></li>
