@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import menubtn from '/assets/icon-menu.svg'
 import MobileList from '../utils/MobileList'
 import { Link, useNavigate } from 'react-router-dom'
+import Navlink from './Navlink'
 
 function NavContainer() {
     const [isVisible, setNavVisible] = useState(false)
@@ -14,10 +15,10 @@ function NavContainer() {
                 <nav>
                     <h1>traver </h1>
                     <ul>
-                        <li><Link to="#services"onClick={() => document.getElementById("services").scrollIntoView({ behavior: "smooth" })}>Services</Link></li>
-                        <li><Link to="#department" onClick={() => document.getElementById("department").scrollIntoView({ behavior: "smooth" })}>Department</Link></li>
-                        <li><Link to="#news-lette" onClick={() => document.getElementById("news-lette").scrollIntoView({ behavior: "smooth" })}>Newsleter</Link></li>
-                        <li><Link to="#footer" onClick={() => document.getElementById("footer").scrollIntoView({ behavior: "smooth" })}>Site Map</Link></li>
+                        <Navlink label={"Services"} target={"services"}/>
+                        <Navlink label={"Department"} target={"department"}/>
+                        <Navlink label={"Newsletter"} target={"news-lette"}/>
+                        <Navlink label={"Site Map"} target={"footer"}/>
                     </ul>
                     <div className="buttons_auth">
                         <button id="register" onClick={() => navigate('/register')}>Signup</button>
