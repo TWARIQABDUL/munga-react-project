@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import dest1 from '/assets/dest1.png'
-import ModalPopUp from '../components/ModalPopUp'
+import ModalPopUp from './ModalPopUp'
 import useFech from '../customhooks/useFech'
 function DestinationCard({ aboutCity,itemKey }) {
     const [preview, showPreview] = useState(false)

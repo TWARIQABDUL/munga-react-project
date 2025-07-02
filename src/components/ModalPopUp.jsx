@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import close from "/assets/icon-close.svg"
 import { cityInfo } from "../data/cityinfo";
-import YellowButons from '../utils/YellowButons';
+import YellowButons from './YellowButons';
 function ModalPopUp({ controlModal, itemKey }) {
     const [mainImage,setMainImage]=useState(cityInfo[itemKey].icon)
     console.log(cityInfo[itemKey]);

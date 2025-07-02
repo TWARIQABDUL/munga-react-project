@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react'
-import InputGroup from '../utils/InputGroup'
-import YellowButons from '../utils/YellowButons'
-import ThirdPartSignin from '../utils/ThirdPartSignin'
+import InputGroup from './InputGroup'
+import YellowButons from './YellowButons'
+import ThirdPartSignin from './ThirdPartSignin'
 import { emailValidator, passwordValidator, usernameValidator } from '../utils/helpers'
 import { Navigate, useNavigate } from 'react-router-dom'
 function LoginComponent() {

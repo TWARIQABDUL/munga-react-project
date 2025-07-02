@@ -1,4 +1,4 @@
-import DestinationCard from '../utils/DestinationCard'
+import DestinationCard from './DestinationCard'
 import { cityInfo } from '../data/cityinfo'
 import { useEffect, useState } from 'react'
 

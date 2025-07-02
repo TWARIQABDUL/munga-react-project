@@ -2,8 +2,8 @@ import React from 'react'
 import img_backhome from '/assets/back.svg'
 import hero_img from '/assets/hero-image.png'
 import poly from '/assets/poly.svg'
-import AnimatedParagragh from '../utils/AnimatedParagragh'
-import YellowButons from '../utils/YellowButons'
+import AnimatedParagragh from './AnimatedParagragh'
+import YellowButons from './YellowButons'
 
 function HeroSection() {
     return (
