@@ -4,13 +4,12 @@ import hero_img from '/assets/hero-image.png'
 import poly from '/assets/poly.svg'
 import AnimatedParagragh from './AnimatedParagragh'
 import YellowButons from './YellowButons'
+import BackHomeBtn from './BackHomeBtn'
 
 function HeroSection() {
     return (
         <>
-            <div className="back-button" id="back-button">
-                <img src={img_backhome} alt="" />
-            </div>
+            <BackHomeBtn/>
             <section className="hero">
                 <div className="hero-content">
                     <div className="text-container">
