@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import menubtn from '/assets/icon-menu.svg'
 import MobileList from './MobileList'
@@ -7,7 +7,11 @@ import Navlink from './Navlink'
 
 function NavContainer() {
     const [isVisible, setNavVisible] = useState(false)
-    const tagleMenu = () => { setNavVisible(!isVisible) }
+    const tagleMenu = () => { 
+        setNavVisible(!isVisible) 
+        console.log("Menu toggled, visibility is now: ", isVisible);
+        
+    }
     const navigate = useNavigate()
     return (
         <>
