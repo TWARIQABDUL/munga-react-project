@@ -3,8 +3,6 @@ import React, { useContext, useState } from 'react'
 import menubtn from '/assets/icon-menu.svg'
 import MobileList from '../utils/MobileList'
 import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from './Context'
-
 
 function NavContainer() {
     const [isVisible, setNavVisible] = useState(false)

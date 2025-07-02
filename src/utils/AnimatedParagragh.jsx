@@ -18,7 +18,6 @@ function AnimatedParagragh() {
         }
         setMovingText((prev) => prev + text[index]);
         index++;
-        console.log("here end", text[index]);
     }, 100);
     
     return () => clearInterval(interval);

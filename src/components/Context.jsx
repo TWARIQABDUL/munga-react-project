@@ -8,7 +8,6 @@ const AuthProvider = ({children})=>{
     useEffect(()=>{
         if (!localStorage.getItem("user")) {
         navigate("/register")
-        console.log("no user found, redirecting to register");
     }
     else{
         setUser(JSON.parse(localStorage.getItem("user")))
